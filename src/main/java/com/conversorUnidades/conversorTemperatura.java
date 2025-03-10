@@ -4,7 +4,7 @@ public class conversorTemperatura {
     public static void converterTemperatura(double valor, String unidade_temperatura) {
         double celsius, fahrenheit, kelvin;
     //  no programa principal, será pedida a unidade.
-        switch (unidade_temperatura.toLowerCase()) {
+        switch (unidade_temperatura) {
             case "C":
                 celsius = valor;
                 fahrenheit = (celsius*(9/5)) + 32;
@@ -27,11 +27,11 @@ public class conversorTemperatura {
         }
 
         System.out.println("\nConversões:");
-        System.out.printf("Celsius -> %.3f", celsius);
+        System.out.printf("Celsius -> %.3f °C", celsius);
         System.out.printf("\n");
-        System.out.printf("Fahrenheit -> %.3f", fahrenheit);
+        System.out.printf("Fahrenheit -> %.3f °F", fahrenheit);
         System.out.printf("\n");
-        System.out.printf("Kelvin -> %.3f", kelvin);
+        System.out.printf("Kelvin -> %.3f K", kelvin);
         System.out.printf("\n");
     }
 }

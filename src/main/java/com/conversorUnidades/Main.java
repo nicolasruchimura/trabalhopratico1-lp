@@ -21,22 +21,46 @@ public class Main {
             System.out.println("0. Sair");
 
             int escolha = sc.nextInt();  //  aonde será feita a escolha das opções acima e, consequentemente, a classe que será invocada.
+            sc.nextLine();      //    Após a quebra de linha com o nextInt();
+
 
             if (escolha == 0) {
-                System.out.println("...");
-                break;  //  o programa encerra com a escolha ~ '0. Sair' ~
+                System.out.println("Saindo...");
+                break;  //  o programa encerra somente com a escolha ~ '0. Sair' ~
             }
 
             double valor;
             String unidade_temperatura;
+            String unidade_distancia;
 
-    //  a partir de então, é utilizado o comando ~' switch '~ como facilitador de decisões.
+            //  a partir de então, é utilizado o comando ~' switch '~ como facilitador de decisões.
 
             switch (escolha) {
                 case 1:
-                    System.out.println("Introduza a unidade de temperatura:");
+                    System.out.println("                Escolheste Conversão de Temperaturas\n");
+
+                    System.out.println("~ Informe o valor da temperatura:");
+                    valor = Double.parseDouble(sc.nextLine());
+
+                    System.out.println("~ Introduza a unidade de temperatura (C / F / K):");
                     unidade_temperatura = sc.nextLine();
-                    System.out.println("");
+
+                    conversorTemperatura.converterTemperatura(valor, unidade_temperatura);
+                    break;
+
+                case 2:
+                    System.out.println("                Escolheste Conversão de Unidade de Distância\n");
+
+                    System.out.println("~ Introduza o valor da distância:");
+                    valor = Double.parseDouble(sc.nextLine());
+
+                    System.out.println("~ Introduza a unidade em que se encontra a distância acima (m / km / mi / yd):");
+                    unidade_distancia = sc.nextLine();
+
+                    conversorDistancia.converterDistancia(valor, unidade_distancia);
+                    break;
             }
 
         }
+    }
+}

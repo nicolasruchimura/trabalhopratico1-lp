@@ -40,13 +40,13 @@ public class conversorDistancia {
         }
 
         System.out.println("\nConversões:");
-        System.out.printf("Metros -> %.3f", metros);
+        System.out.printf("Metros -> %.3f m", metros);
         System.out.printf("\n");
-        System.out.printf("Quilômetros -> %.3f", quilometros);
+        System.out.printf("Quilômetros -> %.3f km", quilometros);
         System.out.printf("\n");
-        System.out.printf("Milhas -> %.3f", milhas);
+        System.out.printf("Milhas -> %.3f mi", milhas);
         System.out.printf("\n");
-        System.out.printf("Jardas -> %.3f", jardas);
+        System.out.printf("Jardas -> %.3f yd", jardas);
         System.out.printf("\n");
     }
 }
