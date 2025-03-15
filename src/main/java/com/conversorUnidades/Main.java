@@ -1,66 +1,54 @@
 package com.conversorUnidades;
 
-import com.conversorUnidades.conversorDistancia;
-import com.conversorUnidades.conversorTemperatura;
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); // de java.util.Scanner
+        Scanner sc = new Scanner(System.in);
 
-        while (true) {  //  faz com que o programa seja sempre executado, a não ser que haja um break.
+        while (true) {
             System.out.println("\nSelecione o tipo de conversão que deseja:");
-
             System.out.println("1. Temperatura");
             System.out.println("2. Distância");
-            System.out.println("3. Peso");
-            System.out.println("4. Tempo");
-            System.out.println("5. Velocidade");
-            System.out.println("6. Área");
+            System.out.println("3. Velocidade");
+            System.out.println("4. Área");
             System.out.println("0. Sair");
 
-            int escolha = sc.nextInt();  //  aonde será feita a escolha das opções acima e, consequentemente, a classe que será invocada.
-            sc.nextLine();      //    Após a quebra de linha com o nextInt();
-
+            int escolha = sc.nextInt();
+            sc.nextLine();
 
             if (escolha == 0) {
                 System.out.println("Saindo...");
-                break;  //  o programa encerra somente com a escolha ~ '0. Sair' ~
+                break;
             }
 
-            double valor;
-            String unidade_temperatura;
-            String unidade_distancia;
+            System.out.println("\nInforme o valor:");
+            double valor = Double.parseDouble(sc.nextLine());
 
-            //  a partir de então, é utilizado o comando ~' switch '~ como facilitador de decisões.
+            System.out.println("Informe a unidade de origem:");
+            String unidadeOrigem = sc.nextLine();
+
+            System.out.println("Informe a unidade de destino:");
+            String unidadeDestino = sc.nextLine();
 
             switch (escolha) {
                 case 1:
-                    System.out.println("                Escolheste Conversão de Temperaturas\n");
-
-                    System.out.println("~ Informe o valor da temperatura:");
-                    valor = Double.parseDouble(sc.nextLine());
-
-                    System.out.println("~ Introduza a unidade de temperatura (C / F / K):");
-                    unidade_temperatura = sc.nextLine();
-
-                    conversorTemperatura.converterTemperatura(valor, unidade_temperatura);
+                    conversorTemperatura.converterTemperatura(valor, unidadeOrigem, unidadeDestino);
                     break;
-
                 case 2:
-                    System.out.println("                Escolheste Conversão de Unidade de Distância\n");
-
-                    System.out.println("~ Introduza o valor da distância:");
-                    valor = Double.parseDouble(sc.nextLine());
-
-                    System.out.println("~ Introduza a unidade em que se encontra a distância acima (m / km / mi / yd):");
-                    unidade_distancia = sc.nextLine();
-
-                    conversorDistancia.converterDistancia(valor, unidade_distancia);
+                    conversorDistancia.converterDistancia(valor, unidadeOrigem, unidadeDestino);
                     break;
+                case 3:
+                    conversorVelocidade.converterVelocidade(valor, unidadeOrigem, unidadeDestino);
+                    break;
+                case 4:
+                    conversorArea.converterArea(valor, unidadeOrigem, unidadeDestino);
+                    break;
+                default:
+                    System.out.println("Opção inválida! Escolha entre 1 e 4 ou 0 para sair.");
             }
-
         }
+
+        sc.close();
     }
 }
