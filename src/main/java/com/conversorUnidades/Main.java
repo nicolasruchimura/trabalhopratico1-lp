@@ -3,9 +3,9 @@ package com.conversorUnidades;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void Conversoes(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+/*O modelo condicional 'while(true){}' implica em um programa que encerra somente com uma chamada.*/
         while (true) {
             System.out.println("\nSelecione o tipo de conversão que deseja:");
             System.out.println("1. Temperatura");
@@ -13,15 +13,18 @@ public class Main {
             System.out.println("3. Velocidade");
             System.out.println("4. Área");
             System.out.println("0. Sair");
+            System.out.println("\n");
 
             int escolha = sc.nextInt();
-            sc.nextLine();
-
+            sc.nextLine();                              /*Cabe ao 'ENTER', que contaria como sc*/
+                                                        /*sc.nexInt provém da biblioteca Scanner sc e armazena um inteiro.*/
             if (escolha == 0) {
                 System.out.println("Saindo...");
                 break;
             }
-
+/**
+ * @valor = input do usuario - seria o valor da temperatura, velocidade, ...
+ */
             System.out.println("\nInforme o valor:");
             double valor = Double.parseDouble(sc.nextLine());
 

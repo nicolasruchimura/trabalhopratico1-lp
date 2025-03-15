@@ -5,14 +5,14 @@ public class conversorArea {
         double metrosQuadrados, quilometrosQuadrados, hectares, acres;
 
         switch (unidadeOrigem.toLowerCase()) {
-            case "m²":
+            case "m2":
                 metrosQuadrados = valor;
                 quilometrosQuadrados = metrosQuadrados / 1_000_000;
                 hectares = metrosQuadrados / 10_000;
                 acres = metrosQuadrados / 4046.86;
                 break;
 
-            case "km²":
+            case "km2":
                 quilometrosQuadrados = valor;
                 metrosQuadrados = quilometrosQuadrados * 1_000_000;
                 hectares = quilometrosQuadrados * 100;
@@ -34,15 +34,15 @@ public class conversorArea {
                 break;
 
             default:
-                System.out.println("Unidade inválida! Use 'm²', 'km²', 'ha' ou 'ac'.");
+                System.out.println("Unidade inválida! Use 'm2', 'km2', 'ha' ou 'ac'.");
                 return;
         }
 
         System.out.println("\nConversões:");
-        if (unidadeDestino.equals("m²")) {
+        if (unidadeDestino.equals("m2")) {
             System.out.printf("Metros quadrados -> %.3f m²\n", metrosQuadrados);
         }
-        if (unidadeDestino.equals("km²")) {
+        if (unidadeDestino.equals("km2")) {
             System.out.printf("Quilômetros quadrados -> %.6f km²\n", quilometrosQuadrados);
         }
         if (unidadeDestino.equals("ha")) {
