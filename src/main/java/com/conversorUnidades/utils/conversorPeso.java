@@ -1,4 +1,4 @@
-package com.conversorUnidades;
+package com.conversorUnidades.utils;
 
 public class conversorPeso
         {

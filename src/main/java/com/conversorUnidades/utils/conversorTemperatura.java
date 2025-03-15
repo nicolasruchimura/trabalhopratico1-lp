@@ -1,4 +1,4 @@
-package com.conversorUnidades;
+package com.conversorUnidades.utils;
 
 public class conversorTemperatura {
     public static void converterTemperatura(double valor, String unidadeOrigem, String unidadeDestino) {
