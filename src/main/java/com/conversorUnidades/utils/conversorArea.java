@@ -1,4 +1,4 @@
-package com.conversorUnidades;
+package com.conversorUnidades.utils;
 
 public class conversorArea {
     public static void converterArea(double valor, String unidadeOrigem, String unidadeDestino) {

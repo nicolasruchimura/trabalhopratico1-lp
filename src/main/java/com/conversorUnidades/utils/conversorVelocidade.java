@@ -1,4 +1,4 @@
-package com.conversorUnidades;
+package com.conversorUnidades.utils;
 
 public class conversorVelocidade {
     public static void converterVelocidade(double valor, String unidadeOrigem, String unidadeDestino) {
