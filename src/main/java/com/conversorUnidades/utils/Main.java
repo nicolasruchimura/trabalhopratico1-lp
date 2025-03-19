@@ -3,7 +3,7 @@ package com.conversorUnidades.utils;
 import java.util.Scanner;
 
 public class Main {
-    public static void Conversoes(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 /*O modelo condicional 'while(true){}' implica em um programa que encerra somente com uma chamada.*/
         while (true) {

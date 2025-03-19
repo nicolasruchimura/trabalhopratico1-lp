@@ -18,7 +18,7 @@ public class LifoBuffer<T>
     }
 
 /*
- * Explicação Pilha começar no -1:
+ *  Explicação Pilha começar no -1:
  *  Vamos supor que nossa pilha armazene três (3) elementos no array.   
  *  Ou seja, com o "top = -1", a disposição ficaria:    top = -1; arr[] = { , , }
  *  Após o comando "buffer.incrementar(10)":
