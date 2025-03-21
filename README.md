@@ -1,5 +1,6 @@
 <h1>Projeto Prático Laboratórios de Programação</h1>
-<h4>~ Nicolas Uchimura</h4>
+<h4>@author:
+        ~ Nicolas Uchimura</h4>
 <hr>
 
 **Objetivo**: Fazer uma biblioteca em Java com funcionalidades de conversão de unidades e manipulação de estrutura de dados com LIFO e FIFO.<br>
