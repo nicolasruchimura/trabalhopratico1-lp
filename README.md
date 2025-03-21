@@ -10,14 +10,14 @@
   A partir do IntelliJ, houve a criação de src/main/java/ **package** > com.ConversorUnidades.utils;<br>A partir de então, foram criadas as classes de conversão de unidades, para cada tipo de situação: 
   <br>
   
-    >  conversorArea
-    >  conversorDistancia
-    >  conversorPeso
-    >  conversorTemperatura
-    >  conversorVelocidade
-    >  FifoBuffer
-    >  LifoBuffer
-    >  Main
+    >  conversorArea.java
+    >  conversorDistancia.java
+    >  conversorPeso.java
+    >  conversorTemperatura.java
+    >  conversorVelocidade.java
+    >  FifoBuffer.java
+    >  LifoBuffer.java
+    >  Main.java
 
   Main > classe a qual reúne todas as outras.
 <hr>
