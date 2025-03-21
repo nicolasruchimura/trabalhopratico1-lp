@@ -28,5 +28,6 @@
   
   Lifo Buffer > Last In, First Out > Adicionar o último é elimina-lo primeiro;
       No Lifo Buffer, foi utilizado o método de array/pilha. O método, apesar de trabalhoso, acaba por apresentar de maneira mais detalhada os processos do Lifo Buffer, de incrementar/remover/retornar valores.
-  Fifo Buffer > First In, First Out - Primeiro a entrar e primeiro a sair;
+<br> Fifo Buffer > First In, First Out - Primeiro a entrar e primeiro a sair;
       Para isso, será utilizado o LinkedList, que facilita o processo de estruturação do List; O método reúne uma maneira simplificada e rápida de organizar os processos de incrementar/remover/retornar valores, com apenas alguns comandos mais "traduzidos".
+  <br>
