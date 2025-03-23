@@ -1,55 +1,44 @@
 package com.conversorUnidades.utils;
 
 public class conversorDistancia {
-    public static void converterDistancia(double valor, String unidadeOrigem, String unidadeDestino) {
-        double metros, quilometros, milhas, jardas;
+    public static String converterDistancia(double valor, String unidadeOrigem, String unidadeDestino) {
+        double metros = 0;
 
         switch (unidadeOrigem.toLowerCase()) {
             case "m":
                 metros = valor;
-                quilometros = metros / 1000;
-                milhas = metros / 1609.34;
-                jardas = metros * 1.09361;
                 break;
-
             case "km":
-                quilometros = valor;
-                metros = quilometros * 1000;
-                milhas = metros / 1609.34;
-                jardas = metros * 1.09361;
+                metros = valor * 1000;
                 break;
-
             case "mi":
-                milhas = valor;
-                metros = milhas * 1609.34;
-                quilometros = metros / 1000;
-                jardas = metros * 1.09361;
+                metros = valor * 1609.34;
                 break;
-
             case "yd":
-                jardas = valor;
-                metros = jardas / 1.09361;
-                quilometros = metros / 1000;
-                milhas = metros / 1609.34;
+                metros = valor * 0.9144;
                 break;
-
             default:
-                System.out.println("Unidade inválida! Use 'm', 'km', 'mi' ou 'yd'.");
-                return;
+                return "Unidade de origem inválida!";
         }
 
-        System.out.println("\nConversões:");
-        if (unidadeDestino.equals("m")) {
-            System.out.printf("Metros -> %.3f m\n", metros);
+        double resultado = 0;
+        switch (unidadeDestino.toLowerCase()) {
+            case "m":
+                resultado = metros;
+                break;
+            case "km":
+                resultado = metros / 1000;
+                break;
+            case "mi":
+                resultado = metros / 1609.34;
+                break;
+            case "yd":
+                resultado = metros / 0.9144;
+                break;
+            default:
+                return "Unidade de destino inválida!";
         }
-        if (unidadeDestino.equals("km")) {
-            System.out.printf("Quilômetros -> %.3f km\n", quilometros);
-        }
-        if (unidadeDestino.equals("mi")) {
-            System.out.printf("Milhas -> %.3f mi\n", milhas);
-        }
-        if (unidadeDestino.equals("yd")) {
-            System.out.printf("Jardas -> %.3f yd\n", jardas);
-        }
+
+        return valor + " " + unidadeOrigem + " equivale a " + resultado + " " + unidadeDestino;
     }
 }

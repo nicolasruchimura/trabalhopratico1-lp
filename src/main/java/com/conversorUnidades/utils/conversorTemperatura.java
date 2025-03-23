@@ -1,39 +1,29 @@
 package com.conversorUnidades.utils;
 
 public class conversorTemperatura {
-    public static void converterTemperatura(double valor, String unidadeOrigem, String unidadeDestino) {
-        double celsius = 0, fahrenheit = 0, kelvin = 0;
+    public static String converterTemperatura(double valor, String unidadeOrigem, String unidadeDestino) {
+        double resultado = 0;
 
-        switch (unidadeOrigem) {
-            case "C":
-                celsius = valor;
-                fahrenheit = (celsius * (9.0 / 5)) + 32;
-                kelvin = celsius + 273.15;
+        switch (unidadeOrigem.toLowerCase()) {
+            case "c":
+                if (unidadeDestino.equalsIgnoreCase("f")) resultado = (valor * 9/5) + 32;
+                else if (unidadeDestino.equalsIgnoreCase("k")) resultado = valor + 273.15;
+                else resultado = valor;
                 break;
-            case "F":
-                fahrenheit = valor;
-                celsius = (fahrenheit - 32) * (5.0 / 9);
-                kelvin = celsius + 273.15;
+            case "f":
+                if (unidadeDestino.equalsIgnoreCase("c")) resultado = (valor - 32) * 5/9;
+                else if (unidadeDestino.equalsIgnoreCase("k")) resultado = (valor - 32) * 5/9 + 273.15;
+                else resultado = valor;
                 break;
-            case "K":
-                kelvin = valor;
-                celsius = kelvin - 273.15;
-                fahrenheit = (celsius * (9.0 / 5)) + 32;
+            case "k":
+                if (unidadeDestino.equalsIgnoreCase("c")) resultado = valor - 273.15;
+                else if (unidadeDestino.equalsIgnoreCase("f")) resultado = (valor - 273.15) * 9/5 + 32;
+                else resultado = valor;
                 break;
             default:
-                System.out.println("Digite uma unidade válida (C / F / K)!");
-                return;
+                return "Unidade de origem inválida!";
         }
 
-        System.out.println("\nConversão:");
-        if (unidadeDestino.equals("C")) {
-            System.out.printf("Celsius => %.3f °C\n", celsius);
-        }
-        if (unidadeDestino.equals("F")) {
-            System.out.printf("Fahrenheit => %.3f °F\n", fahrenheit);
-        }
-        if (unidadeDestino.equals("K")) {
-            System.out.printf("Kelvin => %.3f K\n", kelvin);
-        }
+        return valor + " " + unidadeOrigem + " equivale a " + resultado + " " + unidadeDestino;
     }
 }

@@ -1,7 +1,7 @@
 package com.conversorUnidades.utils;
 /*
  * LIFO Buffer =>   Last In, First Out
- * Adicionar o último é elimina-lo primeiro 
+ * Adicionar o último é elimina-lo primeiro
  */
 public class LifoBuffer<T>
 {
@@ -59,5 +59,17 @@ public class LifoBuffer<T>
     public boolean estaCheio()
     {
         return top == capacidade - 1;
+    }
+
+    public void listarElementos(){
+        if (estaVazio()){
+            System.out.println("Pilha (LIFO) vazia;");
+            return;
+        }
+        System.out.println("Pilha (LIFO):");
+        for(int i = top; i >= 0; i--){
+            System.out.println(buffer[i] + " ");
+        }
+        System.out.println();
     }
 }

@@ -1,42 +1,44 @@
 package com.conversorUnidades.utils;
 
 public class conversorVelocidade {
-    public static void converterVelocidade(double valor, String unidadeOrigem, String unidadeDestino) {
-        double metrosPorSegundo, quilometrosPorHora, milhasPorHora;
+    public static String converterVelocidade(double valor, String unidadeOrigem, String unidadeDestino) {
+        double metrosPorSegundo = 0;
 
         switch (unidadeOrigem.toLowerCase()) {
-            case "mps":
+            case "m/s":
                 metrosPorSegundo = valor;
-                quilometrosPorHora = metrosPorSegundo * 3.6;
-                milhasPorHora = metrosPorSegundo * 2.23694;
                 break;
-
-            case "kmh":
-                quilometrosPorHora = valor;
-                metrosPorSegundo = quilometrosPorHora / 3.6;
-                milhasPorHora = metrosPorSegundo * 2.23694;
+            case "km/h":
+                metrosPorSegundo = valor / 3.6;
                 break;
-
             case "mph":
-                milhasPorHora = valor;
-                metrosPorSegundo = milhasPorHora / 2.23694;
-                quilometrosPorHora = metrosPorSegundo * 3.6;
+                metrosPorSegundo = valor * 0.44704;
                 break;
-
+            case "kn":
+                metrosPorSegundo = valor * 0.514444;
+                break;
             default:
-                System.out.println("Unidade inválida! Use 'mps', 'kmh' ou 'mph'.");
-                return;
+                return "Unidade de origem inválida!";
         }
 
-        System.out.println("\nConversões:");
-        if (unidadeDestino.equals("mps")) {
-            System.out.printf("Metros por segundo -> %.3f m/s\n", metrosPorSegundo);
+        double resultado = 0;
+        switch (unidadeDestino.toLowerCase()) {
+            case "m/s":
+                resultado = metrosPorSegundo;
+                break;
+            case "km/h":
+                resultado = metrosPorSegundo * 3.6;
+                break;
+            case "mph":
+                resultado = metrosPorSegundo / 0.44704;
+                break;
+            case "kn":
+                resultado = metrosPorSegundo / 0.514444;
+                break;
+            default:
+                return "Unidade de destino inválida!";
         }
-        if (unidadeDestino.equals("kmh")) {
-            System.out.printf("Quilômetros por hora -> %.3f km/h\n", quilometrosPorHora);
-        }
-        if (unidadeDestino.equals("mph")) {
-            System.out.printf("Milhas por hora -> %.3f mph\n", milhasPorHora);
-        }
+
+        return valor + " " + unidadeOrigem + " equivale a " + resultado + " " + unidadeDestino;
     }
 }
